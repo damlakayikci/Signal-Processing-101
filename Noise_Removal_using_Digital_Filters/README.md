@@ -12,7 +12,9 @@ The objective of this assignment is to design and analyze digital bandstop filte
 To identify the noise frequency band, I analyzed the spectrogram of the original audio signal using the MATLAB function `spectrogram()`. The spectrogram revealed a persistent horizontal band of noise between approximately **3.8 kHz and 4.9 kHz**, especially visible during silent regions of the recording.
 
 **Estimated Noise Band:** [3800 Hz, 4900 Hz]
-![Spectrogram of the original noisy signal. Noise is most visible in the 3.8–4.8 kHz range.](https://github.com/user-attachments/assets/d5addf57-f65f-4df8-aadb-d6a9f6ff7678)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d5addf57-f65f-4df8-aadb-d6a9f6ff7678" alt="Spectrogram of the original noisy signal. Noise is most visible in the 3.8–4.8 kHz range." width="600"/>
+</div>
 
 
 ## 2. FIR Filter Design
@@ -39,9 +41,13 @@ I chose these values to obtain the lowest possible order at which the noise beco
 
 I plotted the log-magnitude frequency responses of each filter using `freqz()`, and pole-zero diagrams of the IIR filters using `zplane()`. The frequency responses show that all IIR filters achieved effective attenuation around the noise band, with the elliptic filter offering the sharpest roll-off.
 
-![Frequency response comparison for selected filter orders.](https://github.com/user-attachments/assets/8299935f-b8d1-4d21-9b3e-07f7084d8c1d)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/8299935f-b8d1-4d21-9b3e-07f7084d8c1d" alt="Frequency response comparison for selected filter orders." width="600"/>
+</div>
 
-![Pole-zero plots of Butterworth, Chebyshev I, and Elliptic filters.](https://github.com/user-attachments/assets/147de647-7cfa-48fd-85f6-89fde4c44079)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/147de647-7cfa-48fd-85f6-89fde4c44079" alt="Pole-zero plots of Butterworth, Chebyshev I, and Elliptic filters." width="600"/>
+</div>
 
 
 
@@ -49,8 +55,9 @@ I plotted the log-magnitude frequency responses of each filter using `freqz()`, 
 
 After applying each filter to the audio signal, I generated the spectrograms of the filtered signals. The FIR filter achieved the most uniform suppression. Among IIR designs, Chebyshev Type I and Elliptic filters closely matched FIR performance while using significantly lower orders. Butterworth required a slightly higher order to reach comparable suppression.
 
-![Spectrograms after filtering with FIR and IIR filters.](https://github.com/user-attachments/assets/38614244-a387-413b-a3c5-3645d63c9e10)
-
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/38614244-a387-413b-a3c5-3645d63c9e10" alt="Spectrograms after filtering with FIR and IIR filters." width="600"/>
+</div>
 
 
 ## 6. Stability Analysis of IIR Filters
@@ -63,7 +70,9 @@ To assess numerical stability, I increased the order for each IIR filter until i
 
 The frequency responses at these orders show excessive gain fluctuation and loss of stopband selectivity, confirming instability.
 
-![Frequency responses of IIR filters near instability threshold.](https://github.com/user-attachments/assets/798bb9ca-b945-40ea-bb82-d11bc8e7905c)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/798bb9ca-b945-40ea-bb82-d11bc8e7905c" alt="Frequency responses of IIR filters near instability threshold." width="600"/>
+</div>
 
 
 
